@@ -14,6 +14,8 @@ export function renderImages(hits, gallery) {
     const imgElement = document.createElement('img');
     imgElement.src = hit.webformatURL;
     imgElement.alt = hit.tags;
+    imgElement.width = 360;
+  
 
     const infoDiv = document.createElement('div');
     infoDiv.classList.add('image-info');

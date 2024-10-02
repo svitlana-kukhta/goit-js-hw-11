@@ -26,11 +26,11 @@ export function fetchImages(searchQuery) {
   });
 
   const url = `${PROXY_URL}${BASE_URL}?${searchParams.toString()}`;
-  console.log(`Надсилається запит на URL: ${url}`);
+
 
   return fetch(url, options)
     .then(response => {
-      if (!response.ok) {console.log('Отримана відповідь:', response);
+      if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       return response.json();
