@@ -2,14 +2,6 @@
 
 const API_KEY = '46284520-d906981dc6cb4e25f7cb86bba';
 const BASE_URL = 'https://pixabay.com/api/';
-const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
-const options = {
-  method: 'GET',
-  headers: {
-    'Cache-Control': 'no-cache',
-    'Pragma': 'no-cache',
-  },
-};
 
 /**
  * Функція для отримання зображень з Pixabay
@@ -25,10 +17,10 @@ export function fetchImages(searchQuery) {
     safesearch: 'true',
   });
 
-  const url = `${PROXY_URL}${BASE_URL}?${searchParams.toString()}`;
+  const url = `${BASE_URL}?${searchParams.toString()}`;
 
 
-  return fetch(url, options)
+  return fetch(url)
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -36,4 +28,3 @@ export function fetchImages(searchQuery) {
       return response.json();
     });
 }
-

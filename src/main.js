@@ -44,3 +44,5 @@ fetchSearchBtn.addEventListener('click', (event) => {
       iziToast.error({ title: 'Error', message: 'Sorry, there are no images matching your search query. Please try again!' });
     });
 });
+    
+      
